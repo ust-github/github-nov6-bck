@@ -1,0 +1,25 @@
+server:
+  shutdown: graceful
+
+management:
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      group:
+        exploratory:
+          include: livenessState,readinessState,ping
+          show-details: always
+
+COMMON_MESSAGE: "This is common message for Demo from common/application-common.yml"
+
+jasypt:
+  encryptor:
+    algorithm: PBEWithMD5AndDES
+    iv-generator-classname: org.jasypt.iv.NoIvGenerator
+
+#logging:
+#  level:
+#    org.springframework.web: DEBUG
+#    guru.springframework.controllers: DEBUG
+#    org.hibernate: ERROR
