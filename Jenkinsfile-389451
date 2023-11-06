@@ -1,0 +1,13 @@
+library identifier: 'jenkins-shared-library@gitlab-jsl', retriever: modernSCM(
+  [$class: 'GitSCMSource',
+   remote: 'https://gitlab.dagility.com/solution-factory/sf-jenkins-libraries-mirror',
+   credentialsId: 'scm-cred-id'])
+
+cdBackend{
+	microserviceName = "github-nov6-bck"
+    awsEksCred = "eks-cred-id"
+    eksName = "nonprod-sf-eks-use2-01"
+    eksRegion = "us-east-2"
+    emailRecipient = "pkprabhakaran893@gmail.com"
+  	registryRepo = "docker-sf"
+}
